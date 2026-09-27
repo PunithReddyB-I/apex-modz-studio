@@ -175,6 +175,7 @@ function HomePage() {
                       src={effect.image}
                       alt={`${effect.name} paint finish demo`}
                       className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      loading="lazy"
                     />
                   </div>
                   <div className="p-5">
@@ -232,6 +233,7 @@ function HomePage() {
                 src="/img/effect-chrome.jpg"
                 alt="Mirror chrome custom paint finish"
                 className="h-full w-full object-cover"
+                loading="lazy"
               />
             </div>
           </div>
