@@ -229,7 +229,7 @@ function HomePage() {
             </div>
             <div className="overflow-hidden rounded-3xl border border-[#39ff14]/20">
               <img
-                src="/.netlify/images?url=/img/effect-chrome.jpg&w=900&fm=webp&q=80"
+                src="/img/effect-chrome.jpg"
                 alt="Mirror chrome custom paint finish"
                 className="h-full w-full object-cover"
               />
