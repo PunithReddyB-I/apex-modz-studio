@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700;800;900&display=swap');
+@import "tailwindcss" source("../");
+
+:root {
+  --neon: #39ff14;
+  --neon-soft: #62ff45;
+  --black: #050505;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background: var(--black);
+}
+
+button,
+a,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+::selection {
+  background: var(--neon);
+  color: #000;
+}
+
+.site-title-font {
+  font-family: 'Orbitron', system-ui, sans-serif;
+}
+
+.background-slideshow {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  background: #050505;
+}
+
+.background-slideshow::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 50% 20%, rgba(57, 255, 20, 0.07), transparent 42%),
+    linear-gradient(180deg, rgba(0, 0, 0, 0.78), rgba(0, 0, 0, 0.94));
+}
+
+.background-slide {
+  position: absolute;
+  inset: -5%;
+  background-position: center;
+  background-size: cover;
+  opacity: 0;
+  animation: backgroundFade 24s infinite;
+  filter: saturate(0.75) contrast(1.05);
+}
+
+.background-slide:nth-child(1) {
+  background-image: url('/img/hero.jpg');
+  animation-delay: 0s;
+}
+
+.background-slide:nth-child(2) {
+  background-image: url('/img/effect-chrome.jpg');
+  animation-delay: 6s;
+}
+
+.background-slide:nth-child(3) {
+  background-image: url('/img/effect-chameleon.jpg');
+  animation-delay: 12s;
+}
+
+.background-slide:nth-child(4) {
+  background-image: url('/img/effect-candy.jpg');
+  animation-delay: 18s;
+}
+
+@keyframes backgroundFade {
+  0%, 18% { opacity: 0.09; transform: scale(1); }
+  25%, 43% { opacity: 0; transform: scale(1.04); }
+  100% { opacity: 0; }
+}
+
+.neon-glow {
+  text-shadow: 0 0 8px rgba(57, 255, 20, 0.65), 0 0 24px rgba(57, 255, 20, 0.28);
+}
+
+.neon-border {
+  border-color: rgba(57, 255, 20, 0.32);
+  box-shadow: 0 0 24px rgba(57, 255, 20, 0.05);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .background-slide { animation: none; opacity: 0.06; }
+}
+
+code {
+  font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
