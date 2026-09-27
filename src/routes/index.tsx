@@ -172,7 +172,7 @@ function HomePage() {
                 >
                   <div className="aspect-square w-full overflow-hidden">
                     <img
-                      src={`/.netlify/images?url=${effect.image}&w=600&h=600&fit=cover&fm=webp&q=80`}
+                      src={effect.image}
                       alt={`${effect.name} paint finish demo`}
                       className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
                     />
